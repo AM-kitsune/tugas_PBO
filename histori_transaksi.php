@@ -204,10 +204,10 @@ body {
             <tbody style="text-align:center;">
                 <?php 
                     include "koneksi.php";
-                    $qry_histori=mysqli_query($conn,"select *,transaksi.id AS id_transaksi from transaksi join member on transaksi.id_member = member.id order by transaksi.id desc");
+                    $qry_histori=mysqli_query($conn,"select *,transaksi.id_transaksi AS id_transaksi from transaksi join member on transaksi.id_member = member.id_member order by transaksi.id_transaksi desc");
                     $no=0;
                     while($dt_histori=mysqli_fetch_array($qry_histori)){
-                        $qry_detail=mysqli_query($conn, "select * from detail_transaksi join paket on paket.id=detail_transaksi.id_paket where detail_transaksi.id_transaksi = ".$dt_histori['id_transaksi']);
+                        $qry_detail=mysqli_query($conn, "select * from detail_transaksi join paket on paket.id_paket=detail_transaksi.id_paket where detail_transaksi.id_transaksi = ".$dt_histori['id_transaksi']);
                         $total=0;
                         while($dt_detail=mysqli_fetch_array($qry_detail)){
                             $total+=$dt_detail['qty']*$dt_detail['harga'];
@@ -222,8 +222,8 @@ body {
                     ?>
                 <tr>
                     <td><?=$no?></td>
-                    <td><?=$dt_histori['nama']?></td>
-                    <td><?=$dt_histori['tgl']?></td>
+                    <td><?=$dt_histori['nama_member']?></td>
+                    <td><?=$dt_histori['tgl_transaksi']?></td>
                     <td><?=$dt_histori['batas_waktu']?></td>
                     <td><?=$dt_histori['tgl_bayar']?></td>
                     <td><?=$dt_histori['status']?></td>

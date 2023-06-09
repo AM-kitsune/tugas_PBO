@@ -21,12 +21,12 @@ body {
 <body>
     <?php 
     include "koneksi.php";
-    $qry_get_paket=mysqli_query($conn,"select * from paket where id = '".$_GET['id']."'");
+    $qry_get_paket=mysqli_query($conn,"select * from paket where id_paket = '".$_GET['id']."'");
     $dt_paket=mysqli_fetch_array($qry_get_paket);
     ?>
     <h3>Ubah Paket</h3>
     <form action="proses_ubah_paket.php" method="post">
-        <input type="hidden" name="id" value= "<?=$dt_paket['id']?>">
+        <input type="hidden" name="id_paket" value= "<?=$dt_paket['id_paket']?>">
         Jenis Paket: 
         <?php 
         $arr_jenis=array('kiloan'=>'Kiloan','selimut'=>'Selimut','bed_cover'=>'Bed Cover','kaos'=>'Kaos');

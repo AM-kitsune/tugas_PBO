@@ -106,12 +106,12 @@ body {
                 ?>
                 <tr>              
                     <td><?=$no?></td>
-                    <td><?=$data_member['id']?></td>
-                    <td><?=$data_member['nama']?></td> 
+                    <td><?=$data_member['id_member']?></td>
+                    <td><?=$data_member['nama_member']?></td> 
                     <td><?=$data_member['alamat']?></td>
                     <td><?=$data_member['jenis_kelamin']?></td> 
-                    <td><?=$data_member['tlp']?></td> 
-                    <td><a href="ubah_member.php?id=<?=$data_member['id']?>" class="btn btn-success">Ubah</a><a style="margin-left:10px;" href="hapus_member.php?id=<?=$data_member['id']?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus</a></td> 
+                    <td><?=$data_member['telp']?></td> 
+                    <td><a href="ubah_member.php?id=<?=$data_member['id_member']?>" class="btn btn-success">Ubah</a><a style="margin-left:10px;" href="hapus_member.php?id=<?=$data_member['id_member']?>" onclick="return confirm('Apakah anda yakin menghapus data ini?')" class="btn btn-danger">Hapus</a></td> 
                 </tr>
                 <?php 
             }
